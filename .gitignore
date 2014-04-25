@@ -4,4 +4,4 @@
 /.bundle/
 .leibniz/
 
-/test/data_bags/elasticsearch/serverdensity/credentials.json
+/test/data_bags/serverdensity/credentials.json
