@@ -4,7 +4,7 @@ DEPENDENCIES
     metadata: true
   odi-monitoring
     git: https://github.com/theodi/chef-odi-monitoring.git
-    revision: 2e644fad12fca6f29ce2940f14aff2976aad27df
+    revision: 711674bb42ad28700859a3595f2baf5df2c7e109
   serverdensity
     git: https://github.com/serverdensity/chef-serverdensity.git
     revision: 5d1f81c8d14074dbdf8fc3eaee3f238acc22f693
