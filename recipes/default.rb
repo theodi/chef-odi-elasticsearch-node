@@ -35,5 +35,5 @@ template "/etc/default/elasticsearch" do
   variables({
      heap_size: (node.memory.total.to_i / 4 * 3) / 1000,
   })
-  notifies :restart, resources(service: "elasticsearch")
+  notifies :restart, resources(:service => "elasticsearch")
 end
