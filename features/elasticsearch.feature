@@ -4,8 +4,8 @@ Feature: Elasticsearch server
 
   Background:
     Given I have provisioned the following infrastructure:
-    | Server Name     | Operating System | Version | Chef Version | Run List                  |
-    | elasticsearch   | ubuntu           |   14.04 |      11.12.2 | odi-elasticsearch-wrapper |
+    | Server Name     | Operating System | Version | Chef Version | Run List               |
+    | elasticsearch   | ubuntu           |   14.04 |      11.12.2 | odi-elasticsearch-node |
     And I have run Chef
 
   Scenario: Search server is running
