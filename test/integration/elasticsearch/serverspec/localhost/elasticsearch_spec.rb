@@ -19,3 +19,8 @@ end
 describe command("ps aux | grep elasticsearch") do
   it { should return_stdout /-Xms376m -Xmx376m/ }
 end
+
+# Make sure serverdensity agent is running
+describe service("sd-agent") do
+  it { should be_running }
+end
