@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/berkshelf/berkshelf.git
-  revision: c1063cb4fa8486552d21e344f6243c6aa26a4411
+  revision: 5d78d11ff19d2129726ba9e3bad32c2b1ad6204b
   specs:
     berkshelf (3.1.1)
       addressable (~> 2.3.4)
@@ -74,12 +74,11 @@ GEM
       mixlib-log (~> 1.3)
       rack
     coderay (1.1.0)
-    cucumber (1.3.14)
+    cucumber (1.2.5)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.3)
-      gherkin (~> 2.12)
-      multi_json (>= 1.7.5, < 2.0)
-      multi_test (>= 0.1.1)
+      gherkin (~> 2.11.7)
+      multi_json (~> 1.3)
     dep-selector-libgecode (1.0.0)
     dep_selector (1.0.3)
       dep-selector-libgecode (~> 1.0)
@@ -89,7 +88,14 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.3)
-    gherkin (2.12.2)
+    foodcritic (3.0.3)
+      erubis
+      gherkin (~> 2.11.7)
+      nokogiri (~> 1.5.4)
+      rake
+      treetop (~> 1.4.10)
+      yajl-ruby (~> 1.1.0)
+    gherkin (2.11.8)
       multi_json (~> 1.3)
     hashie (2.1.1)
     highline (1.6.21)
@@ -108,7 +114,6 @@ GEM
     mixlib-log (1.6.0)
     mixlib-shellout (1.4.0)
     multi_json (1.9.2)
-    multi_test (0.1.1)
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)
     net-scp (1.2.0)
@@ -120,6 +125,7 @@ GEM
       net-ssh (>= 2.6.5)
       net-ssh-gateway (>= 1.2.0)
     nio4r (1.0.0)
+    nokogiri (1.5.11)
     octokit (3.1.0)
       sawyer (~> 0.5.3)
     ohai (7.0.2)
@@ -131,11 +137,13 @@ GEM
       mixlib-shellout (~> 1.2)
       systemu (~> 2.5.2)
       yajl-ruby
+    polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
+    rake (10.3.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     retryable (1.3.5)
@@ -164,21 +172,21 @@ GEM
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.6)
-    safe_yaml (1.0.2)
+    safe_yaml (1.0.3)
     sawyer (0.5.4)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
     semverse (1.1.0)
-    serverspec (1.3.0)
+    serverspec (1.4.0)
       highline
       net-ssh
       rspec (~> 2.13)
-      specinfra (>= 1.2.0)
+      specinfra (>= 1.5.0)
     slop (3.5.0)
     solve (1.2.0)
       dep_selector (~> 1.0)
       semverse (~> 1.1)
-    specinfra (1.4.0)
+    specinfra (1.6.0)
     systemu (2.5.2)
     test-kitchen (1.2.1)
       mixlib-shellout (~> 1.2)
@@ -189,18 +197,24 @@ GEM
     thor (0.19.1)
     timers (2.0.0)
       hitimes
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
     varia_model (0.3.2)
       buff-extensions (~> 0.2)
       hashie (>= 2.0.2)
-    yajl-ruby (1.2.0)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   berkshelf!
+  chef
   cucumber
+  foodcritic
   kitchen-vagrant
   leibniz!
+  rake
   serverspec
   test-kitchen
