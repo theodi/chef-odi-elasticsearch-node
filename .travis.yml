@@ -6,6 +6,7 @@ script:
 after_success:
 - openssl enc -d -aes-256-cbc -k $CHEF_KEY -in deploy/key.enc -out deploy/key.pem
 - chmod 600 deploy/key.pem
+- "bundle exec berks install"
 - '[ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && bundle exec rake berkshelf:upload'
 env:
   global:
