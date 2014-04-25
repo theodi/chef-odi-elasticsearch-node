@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: odi-elasticsearch-wrapper
+# Cookbook Name:: odi-elasticsearch-node
 # Recipe:: default
 #
 # Copyright 2014, Open Data Institute

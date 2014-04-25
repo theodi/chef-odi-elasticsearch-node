@@ -1,4 +1,4 @@
-name             'odi-elasticsearch-wrapper'
+name             'odi-elasticsearch-node'
 maintainer       'Open Data Institute'
 maintainer_email 'tech@theodi.org'
 license          'MIT'

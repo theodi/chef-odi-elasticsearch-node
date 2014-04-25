@@ -12,6 +12,6 @@ platforms:
 
 suites:
   - name: elasticsearch
-    run_list: "recipe[odi-elasticsearch-wrapper]"
+    run_list: "recipe[odi-elasticsearch-node]"
     attributes:
     data_bags_path: test/data_bags
