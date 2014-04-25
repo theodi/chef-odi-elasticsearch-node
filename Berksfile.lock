@@ -1,17 +1,19 @@
 DEPENDENCIES
-  odi-elasticsearch-wrapper
-    path: cookbooks/odi-elasticsearch-wrapper
+  odi-elasticsearch-node
+    path: .
+    metadata: true
   odi-monitoring
-    path: cookbooks/odi-monitoring
+    git: https://github.com/theodi/chef-odi-monitoring.git
+    revision: 2e644fad12fca6f29ce2940f14aff2976aad27df
   serverdensity
-    git: git@github.com:serverdensity/chef-serverdensity.git
+    git: https://github.com/serverdensity/chef-serverdensity.git
     revision: 5d1f81c8d14074dbdf8fc3eaee3f238acc22f693
 
 GRAPH
-  apt (2.3.8)
+  apt (2.3.10)
   dpkg_autostart (0.1.10)
   java (1.22.0)
-  odi-elasticsearch-wrapper (0.1.0)
+  odi-elasticsearch-node (0.1.0)
     apt (>= 0.0.0)
     java (>= 0.0.0)
     odi-monitoring (>= 0.0.0)
