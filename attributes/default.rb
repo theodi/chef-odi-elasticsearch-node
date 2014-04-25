@@ -1,1 +1,1 @@
-default['serverdensity']['device_group'] = "databases"
+default.serverdensity.device_group = "databases"
