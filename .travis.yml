@@ -1,5 +1,14 @@
 language: ruby
 rvm:
   - 2.1.0
+before_script:
+  - ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
+  - echo 'Host *' >> ~/.ssh/config
+  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
 script:
   - bundle exec rake
+env:
+  global:
+    - secure: PZFk3SN0qgquxjMEzT6Xy1pl2vEMqj2/rK961ZiTTjaaDpfdC8I63JJoSqdG90w8mjAlj/vFXs1CzSwpAY+FidgDTKW6/gMYC7u6WUR1rR2nguF0DZFNwyNv7JrFW1/v6QHdGb/GWBPPjWZWxe4ssb+kHJ0N98tuHdg9Qnt3Ywk=
+    - secure: PF6wER4JyXFy5AcX2TEUlh+rQQqY/6c0TU1Qmidp94vKr/Ctq+HH0QY61DM4R42CUGMGCmXPd/FsdQ0gv1GCIJA/2KEELGS/PtFQfkEWJHocPbPEuTeIhZNDi57q6kcJ3ivSDHR1hibnbJiyAfZ2p75M2L7ryobV6MtQjYjDfcs=
+    - KITCHEN_YAML=.kitchen.cloud.yml
