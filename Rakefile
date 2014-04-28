@@ -31,6 +31,15 @@ namespace :kitchen do
 
 end
 
+namespace :berkshelf do
+
+  desc "Upload cookbook to chef server"
+  task :upload do
+    sh "bundle exec berks upload -c deploy/berkshelf.json"
+  end
+
+end
+
 task :default => ['foodcritic', 'knife:test', 'kitchen:test']
 
 task :prepare_sandbox do
