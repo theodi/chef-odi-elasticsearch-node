@@ -85,9 +85,27 @@ GEM
       ffi (~> 1.9)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    excon (0.33.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.3)
+    fog (1.22.0)
+      fog-brightbox
+      fog-core (~> 1.21, >= 1.21.1)
+      fog-json
+      nokogiri (~> 1.5, >= 1.5.11)
+    fog-brightbox (0.0.2)
+      fog-core
+      fog-json
+    fog-core (1.22.0)
+      builder
+      excon (~> 0.33)
+      formatador (~> 0.2)
+      mime-types
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+    fog-json (1.0.0)
+      multi_json (~> 1.0)
     foodcritic (3.0.3)
       erubis
       gherkin (~> 2.11.7)
@@ -95,6 +113,7 @@ GEM
       rake
       treetop (~> 1.4.10)
       yajl-ruby (~> 1.1.0)
+    formatador (0.2.4)
     gherkin (2.11.8)
       multi_json (~> 1.3)
     hashie (2.1.1)
@@ -102,6 +121,10 @@ GEM
     hitimes (1.2.1)
     ipaddress (0.8.0)
     json (1.8.1)
+    kitchen-rackspace (0.4.0)
+      fog (~> 1.18)
+      test-kitchen (~> 1.1)
+      unf
     kitchen-vagrant (0.14.0)
       test-kitchen (~> 1.0)
     method_source (0.8.2)
@@ -200,6 +223,9 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.6)
     varia_model (0.3.2)
       buff-extensions (~> 0.2)
       hashie (>= 2.0.2)
@@ -213,6 +239,7 @@ DEPENDENCIES
   chef
   cucumber
   foodcritic
+  kitchen-rackspace
   kitchen-vagrant
   leibniz!
   rake
