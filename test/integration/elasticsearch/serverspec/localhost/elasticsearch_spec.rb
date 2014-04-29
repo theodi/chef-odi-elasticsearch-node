@@ -17,7 +17,7 @@ end
 
 # Check elasticsearch memory usage
 describe command("ps aux | grep elasticsearch") do
-  it { should return_stdout /-Xms376m -Xmx376m/ }
+  it { should return_stdout /-Xms760m -Xmx760m/ }
 end
 
 # Make sure serverdensity agent is running
