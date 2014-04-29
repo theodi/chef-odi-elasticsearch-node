@@ -19,6 +19,16 @@ GIT
       thor (~> 0.18)
 
 GIT
+  remote: git://github.com/theodi/kitchen-rackspace.git
+  revision: af5f8ac7fd7fcaa5fe0463d50b8e35d07ddf0f18
+  branch: feature-output-progress
+  specs:
+    kitchen-rackspace (0.4.1.dev)
+      fog (~> 1.18)
+      test-kitchen (~> 1.1)
+      unf
+
+GIT
   remote: git://github.com/theodi/leibniz.git
   revision: 876cafd3250d613f05426d638620cacfc8b2e6c4
   branch: dependencies
@@ -121,10 +131,6 @@ GEM
     hitimes (1.2.1)
     ipaddress (0.8.0)
     json (1.8.1)
-    kitchen-rackspace (0.4.0)
-      fog (~> 1.18)
-      test-kitchen (~> 1.1)
-      unf
     kitchen-vagrant (0.14.0)
       test-kitchen (~> 1.0)
     method_source (0.8.2)
@@ -239,7 +245,7 @@ DEPENDENCIES
   chef
   cucumber
   foodcritic
-  kitchen-rackspace
+  kitchen-rackspace!
   kitchen-vagrant
   leibniz!
   rake
