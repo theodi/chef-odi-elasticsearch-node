@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: git://github.com/theodi/kitchen-rackspace.git
-  revision: b12cc42dd0271a1dec978f68901a2e0a9555e533
+  revision: dc1e0afae11c3a6d77f4ace7ce0163200b15aec1
   branch: feature-output-progress
   specs:
     kitchen-rackspace (0.4.1.dev)
