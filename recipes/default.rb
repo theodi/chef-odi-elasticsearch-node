@@ -5,6 +5,7 @@
 # Copyright 2014, Open Data Institute
 #
 
+include_recipe "apt"
 include_recipe "java"
 include_recipe "odi-monitoring"
 
