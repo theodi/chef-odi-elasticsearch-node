@@ -1,0 +1,21 @@
+---
+driver:
+  name: rackspace
+  rackspace_username: <%= ENV['RACKSPACE_USERNAME'] %>
+  rackspace_api_key: <%= ENV['RACKSPACE_API_KEY'] %>
+  rackspace_region: lon
+  require_chef_omnibus: latest
+  image_id: 5cc098a5-7286-4b96-b3a2-49f4c4f82537
+  wait_for: 1200
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: elasticsearch
+    run_list: "recipe[odi-elasticsearch-node]"
+    attributes:
+    data_bags_path: test/data_bags

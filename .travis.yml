@@ -1,13 +1,22 @@
 language: ruby
 rvm:
 - 2.1.0
+before_script:
+  - ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
+  - echo 'Host *' >> ~/.ssh/config
+  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+  - openssl aes-256-cbc -k "$DATA_BAG_KEY" -in test/data_bags/serverdensity/credentials.enc.json -d -a -out test/data_bags/serverdensity/credentials.json
 script:
-- bundle exec rake
+  - bundle exec rake
 after_success:
-- openssl enc -d -aes-256-cbc -k $CHEF_KEY -in deploy/key.enc -out deploy/key.pem
-- chmod 600 deploy/key.pem
-- "bundle exec berks install"
-- '[ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && bundle exec rake berkshelf:upload'
+  - openssl enc -d -aes-256-cbc -k $CHEF_KEY -in deploy/key.enc -out deploy/key.pem
+  - chmod 600 deploy/key.pem
+  - "bundle exec berks install"
+  - '[ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && bundle exec rake berkshelf:upload'
 env:
   global:
-    secure: BsuhTHtxNGbxX6kqET04Q9yLzURXP0gYdRMCMbTmk7aSTB2WEYWWjArajHFXLjuwYZ61cr+JtyF4N/ATEONYiU5CfsEJrBvwtGv41lGDiOE4+YFpGzVjtxOgykWTBwgjPfOP3EA285SudWEwcLHL3OV6v3CaU/d01/2Z5pnNOFM=
+  - KITCHEN_YAML=.kitchen.cloud.yml
+  - secure: fhAXKn+d7FhuX0GbcEKeeYRm2T6T4O4nEHshay6mIphEqvsXuTUp3hJC90AydpOb1K9+m9Hn75bSFy5mhpxX/+2vx4YWaW0dAeN0kJeZIGmStVKJtVnhtxIxv1rjmIzXfkaXKiSIUKlGPuiPoVd5LncmM7kXt8gYSFtxN3eADxw=
+  - secure: gzmyE0cu+e/e5FziARR3lN/2LGuNHwuDVzLfPwFNMOURduOkU1SK4EIfgjFUCBo7DwqgsiJ2KAklX69xvHoJBdY3YPyx9bPI09KvkJaOu980wwJJebOcpMP1q65d3R1CMbwEV6pXqokufwFpQTNyztWBAXkinDYJ//LJFW8Ex6A=
+  - secure: Z9GkUVnhvUh04QF/0Xhwk/ePngLXjTCiWeeWmBcEryPaKFR9/QmwOTNx12CA/racKQBjFcnYUM6TrWEz8P2EfSMcHqAOhijarhPnP6jC8XMZqOZYBMlp7D3q51/F+uaqgbSAVE8nwhPu7hnnDX2kD++7kSfUad8EoI9wE20h+mw=
+  - secure: BsuhTHtxNGbxX6kqET04Q9yLzURXP0gYdRMCMbTmk7aSTB2WEYWWjArajHFXLjuwYZ61cr+JtyF4N/ATEONYiU5CfsEJrBvwtGv41lGDiOE4+YFpGzVjtxOgykWTBwgjPfOP3EA285SudWEwcLHL3OV6v3CaU/d01/2Z5pnNOFM=

@@ -22,6 +22,15 @@ namespace :knife do
 
 end
 
+namespace :kitchen do
+
+  desc "Run test-kitchen tests"
+  task :test do
+    sh "kitchen test --destroy=always"
+  end
+
+end
+
 namespace :berkshelf do
 
   desc "Upload cookbook to chef server"
@@ -31,7 +40,7 @@ namespace :berkshelf do
 
 end
 
-task :default => ['foodcritic', 'knife:test']
+task :default => ['foodcritic', 'knife:test', 'kitchen:test']
 
 task :prepare_sandbox do
   files = %w{*.md *.rb attributes definitions files libraries providers recipes resources templates}
